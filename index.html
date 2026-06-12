@@ -3,49 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Financial Advisor Chatbot</title>
+    <title>AI Financial Advisor</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
+            background: #f4f6f9;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
+
         .container {
-            text-align: center;
             background: white;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            text-align: center;
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        h1 { color: #1e293b; margin-bottom: 10px; }
-        p { color: #64748b; font-size: 18px; }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 18px;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Welcome to my AI Financial Advisor</h1>
-        <p>Click the chat bubble in the bottom right corner to start talking to the AI!</p>
+        <h1>Welcome to My AI Financial Advisor</h1>
+
+        <p>
+            Click the chat bubble in the bottom-right corner to start talking
+            with your AI Financial Advisor.
+        </p>
     </div>
 
-    <!-- Your Voiceflow code is already part of the script below -->
+    <!-- Voiceflow Chat Widget -->
     <script type="text/javascript">
-      (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-          v.onload = function() {
+    (function(d, t) {
+        var v = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+
+        v.onload = function() {
             window.voiceflow.chat.load({
-              verify: { projectID: '62abfec1ddcd98bde411b71d' },
-              url: 'https://voiceflow.com',
-              versionID: 'production'
+                verify: {
+                    projectID: '6a2bfec1ddcd98bde411b71d'
+                },
+                url: 'https://general-runtime.voiceflow.com',
+                voice: {
+                    url: 'https://runtime-api.voiceflow.com'
+                }
             });
-          }
-          v.src = "https://voiceflow.com"; v.type = "text/javascript";
-          s.parentNode.insertBefore(v, s);
-      })(document, 'script');
+        };
+
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+
+    })(document, 'script');
     </script>
 
 </body>
